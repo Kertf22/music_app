@@ -8,7 +8,8 @@ body {
 }
 
 #root {
-  font-family: 'Inter';
+  /* font-family: 'Inter'; */
+  font-family:Nunito, sans-serif;
   height: 100vh;
 }
 
@@ -32,3 +33,5 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+

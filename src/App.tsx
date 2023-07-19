@@ -3,15 +3,43 @@ import MusicPlayer from "./components/MusicPlayer";
 import { SideBar } from "./components/SideBar";
 import { SideBarHeader } from "./components/SideBar/SideBarHeader";
 import { SideBarContent } from "./components/SideBar/SideBarContent";
-import { Header } from "./components/Header";
-import Home from "./pages/Home";
+import Header from "./components/Header";
+import { useGlobalStore } from "./store/global";
+import { HomeRoot } from "./pages/Home/HomeRoot";
+import { SearchRoot } from "./pages/Search/SearchRoot";
 
 const PageContent = ({ children }: { children: React.ReactNode }) => {
+
+  const { page } = useGlobalStore();
+
   return (
     <>
-      <div className="w-full  rounded-2xl">
-        <Header />
-        <div className="relative h-[calc(100%-112px)]  overflow-auto">{children}</div>
+      <div className="w-[calc(100%-256px)]  rounded-2xl">
+        <Header.Root>
+          <div className="flex justify-between items-center ">
+
+            <div className="flex items-center gap-4 h-12">
+
+              <Header.Controllers />
+
+              {page.name === "search" && <Header.Search />}
+
+            </div>
+
+            <Header.User />
+          </div>
+
+          {page.name === "search" && <Header.SearchTags />}
+
+          {page.hasTitle && <h1 className="text-white text-3xl font-bold">
+            {page.title}
+          </h1>}
+        </Header.Root>
+
+
+        <div className="relative h-[calc(100%-112px)]  overflow-y-auto">
+          {children}
+        </div>
       </div>
     </>
   );
@@ -28,15 +56,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <SideBarContent />
             </SideBar.Root>
             <PageContent>
-              <Home.Root />
+              {children}
             </PageContent>
           </div>
           <MusicPlayer.Root>
-            <MusicPlayer.Info />
+            <MusicPlayer.Info title="American Pie" artist="Elton Jon" />
             <MusicPlayer.Controlls />
             <MusicPlayer.Settings />
           </MusicPlayer.Root>
-          {children}
         </div>
       </div>
     </>
@@ -44,10 +71,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 };
 
 function App() {
+  const { page } = useGlobalStore();
+
   return (
     <>
       <Layout>
-        {/* <p className="text-white">Welcome to Music APP</p> */}
+        {page.name === "home" && <HomeRoot />}
+        {page.name === "search" && (<SearchRoot />)}
+
       </Layout>
     </>
   );

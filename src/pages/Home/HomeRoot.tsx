@@ -1,4 +1,4 @@
-import { MusicCard } from "../../components/MusicCard/MusicCard";
+import { MusicCard } from "../../components/MusicCard/MusicCardRoot";
 
 interface IMusicData {
   id: string;
