@@ -7,11 +7,11 @@ const MusicPlayerInfo = () => {
           <img
             src="https://source.unsplash.com/random"
             alt="avatar"
-            className="w-16 h-16"
+            className="w-16 h-16 rounded-sm"
           />
           <div className="flex flex-col">
-            <p className="text-gray-200 text-sm">Song Name</p>
-            <p className="text-gray-600 text-xs">Elton Json </p>
+            <p className="text-gray-200 text-sm hover:underline cursor-pointer">Song Name</p>
+            <p className="text-gray-600 text-xs hover:underline cursor-pointer">Elton Json </p>
           </div>
             <Heart size={15} className="text-gray-500 mt-2 ml-2 hover:text-gray-200 cursor-pointer" />
         </div>

@@ -8,15 +8,16 @@ export default {
     extend: {
       colors: {
         gray : {
+          DEFAULT: '#1F1F1F',
           900: '#1F1F1F',
           800: '#252526',
           700: '#39393B',
-          600: '#8C8C8C',
-          500: '#BFBFBF',
-          400: '#D4D4D4',
-          300: '#E1E1E1',
-          200: '#F0F0F0',
-          100: '#F8F8F8',
+          600: '#46464A',
+          500: '#525256',
+          400: '#5F5F63',
+          300: '#8C8C8C',
+          200: '#e6e6e6',
+          100: '#f1f1f1',
         },
         green: {
           DEFAULT: '#ADFF00',
@@ -33,6 +34,9 @@ export default {
 
       }
     },
+    fontFamily:{
+      'sans':  ['"Inter"', 'sans-serif'],
+    }
   },
   plugins: [],
 }

@@ -2,12 +2,17 @@ import React from "react";
 import MusicPlayer from "./components/MusicPlayer";
 import { SideBar } from "./components/SideBar";
 import { SideBarHeader } from "./components/SideBar/SideBarHeader";
+import { SideBarContent } from "./components/SideBar/SideBarContent";
+import { Header } from "./components/Header";
+import Home from "./pages/Home";
 
-
-const PageContent = () => {
+const PageContent = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="w-full h-full p-8 rounded-xl"></div>
+      <div className="w-full  rounded-2xl">
+        <Header />
+        <div className="relative h-[calc(100%-112px)]  overflow-auto">{children}</div>
+      </div>
     </>
   );
 };
@@ -15,15 +20,18 @@ const PageContent = () => {
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="p-12 flex justify-center items-center ">
-        <div className="bg-gray-900 w-full h-[80vh] max-w-7xl rounded-2xl">
-          <div className="h-[calc(100%-112px)] w-full flex">
+      <div className="flex justify-center items-center h-full">
+        <div className="bg-gray w-full h-[80vh] max-w-7xl rounded-2xl m-auto border border-gray-400">
+          <div className="h-[calc(100%-96px)] w-full flex">
             <SideBar.Root>
-              <SideBarHeader/>
+              <SideBarHeader />
+              <SideBarContent />
             </SideBar.Root>
-            <PageContent />
+            <PageContent>
+              <Home.Root />
+            </PageContent>
           </div>
-          <MusicPlayer.Root >
+          <MusicPlayer.Root>
             <MusicPlayer.Info />
             <MusicPlayer.Controlls />
             <MusicPlayer.Settings />
