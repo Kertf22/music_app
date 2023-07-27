@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   background-color: #000000;
 }
 
 #root {
   /* font-family: 'Inter'; */
-  font-family:Nunito, sans-serif;
+  font-family: 'Poppins', sans-serif;
   height: 100vh;
 }
 
@@ -20,13 +19,14 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #555
+  background: #555;
+  border-radius: 0 0 1rem 0rem
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
-  border-radius: 5px;
+  border-radius: 0 0 1rem 0rem
 }
 
 /* Handle on hover */

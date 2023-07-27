@@ -5,13 +5,13 @@ interface IMusicCardProps {
   bannerURL: string;
 }
 
-export const MusicCard = (props: IMusicCardProps) => {
+export const MusicCardBig = (props: IMusicCardProps) => {
   return (
-    <div className="flex flex-col m-2 max-w-[208px] w-full flex-shrink-0">
+    <div className="flex flex-col m-2">
       <img
         src={props.bannerURL}
         alt="avatar"
-        className="max-w-[208px] max-h-[208px] h-full w-full rounded-md"
+        className="h-full w-full rounded-md"
       />
       <div className="flex flex-col">
         <p className="text-gray-200 text-sm hover:underline cursor-pointer">

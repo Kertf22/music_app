@@ -1,11 +1,14 @@
-import { MusicCard } from "../../components/MusicCard/MusicCardRoot";
-
+import { } from "react";
+import { useWindowDimentions } from "../../hooks/useWindowDimentions";
+import MusicCard from "../../components/MusicCard";
 interface IMusicData {
   id: string;
   title: string;
   artist: string;
   bannerURL: string;
 }
+
+
 export const HomeRoot = () => {
   const musicsData: IMusicData[] = [];
 
@@ -18,10 +21,26 @@ export const HomeRoot = () => {
     });
   }
 
+  const { width } = useWindowDimentions();
+
+  let gridCols = 5;
+  if (width < 768) {
+    gridCols = 2
+  } else if (width < 1024) {
+    gridCols = 3
+  } else if (width < 1280) {
+    gridCols = 4
+  }
+  
   return (
-    <div className="flex flex-row flex-wrap p-8 overflow-auto z-0 relative h-fll">
+    <div className={`grid`}
+    
+    style={{
+      gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))`
+    }}
+    >
       {musicsData.map((music) => (
-        <MusicCard key={music.id} {...music} />
+        <MusicCard.DEFAULT key={music.id} {...music} />
       ))}
     </div>
   );

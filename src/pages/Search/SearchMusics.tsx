@@ -1,36 +1,6 @@
-import { Heart, Timer } from "@phosphor-icons/react";
+import { Timer } from "@phosphor-icons/react";
 import Music from "../../types/music";
-
-
-
-interface MusicComponentProps {
-    title: string;
-    artist: string;
-}
-
-const MusicComponent = ({
-    title,
-    artist
-}: MusicComponentProps) => {
-    return (
-        <>
-            <div className="w-64 flex gap-2">
-                <img
-                    src="https://source.unsplash.com/random"
-                    alt="avatar"
-                    className="w-12 h-12 rounded-sm"
-                />
-                <div className="flex flex-col gap-1">
-                    <p className="text-gray-200 text-md hover:underline cursor-pointer">{title}</p>
-                    <p className="text-gray-600 text-xs hover:underline cursor-pointer">{artist}</p>
-                </div>
-                <Heart size={15} className="text-gray-500 mt-2 ml-2 hover:text-gray-200 cursor-pointer" />
-            </div>
-        </>
-    );
-};
-
-
+import MusicCard from "../../components/MusicCard";
 
 export const SearchMusics = () => {
 
@@ -83,14 +53,12 @@ export const SearchMusics = () => {
                                 </p>
                             </td>
                             <td className="py-3">
-                                <MusicComponent title={music.title} artist={music.artist} />
+                                <MusicCard.SmallWithHeart title={music.title} artist={music.artist} />
                             </td>
                             <td className="py-3">{music.views}</td>
                             <td className="py-3">{music.music_time}</td>
                         </tr>
-
                     ))}
-
                 </tbody>
             </table>
         </div>
