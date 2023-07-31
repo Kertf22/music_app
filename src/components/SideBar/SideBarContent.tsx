@@ -1,9 +1,9 @@
 import { MagnifyingGlass, House } from "@phosphor-icons/react";
 import { useState } from "react";
-import { useGlobalStore } from "../../store/global";
-import { HOME_PAGE, SEARCH_PAGE } from "../../constants/pages";
+import { useGlobalStore } from "../../domain/store/global";
+import { HOME_PAGE, SEARCH_PAGE } from "../../domain/constants/pages";
 import Search from "../../pages/Search";
-import { Page } from "../../types/page";
+import { Page } from "../../domain/types/page";
 
 interface IOption {
   icon: React.ReactNode;

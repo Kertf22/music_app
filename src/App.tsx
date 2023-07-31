@@ -4,7 +4,7 @@ import { SideBar } from "./components/SideBar";
 import { SideBarHeader } from "./components/SideBar/SideBarHeader";
 import { SideBarContent } from "./components/SideBar/SideBarContent";
 import Header from "./components/Header";
-import { useGlobalStore } from "./store/global";
+import { useGlobalStore } from "./domain/store/global";
 import { HomeRoot } from "./pages/Home/HomeRoot";
 import { SearchRoot } from "./pages/Search/SearchRoot";
 

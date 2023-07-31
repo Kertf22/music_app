@@ -1,4 +1,4 @@
-import { useGlobalStore } from "../../store/global"
+import { useGlobalStore } from "../../domain/store/global"
 import { SearchAll } from "./SearchAll"
 import { SearchArtists } from "./SearchArtists"
 import { SearchMusics } from "./SearchMusics"

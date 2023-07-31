@@ -1,5 +1,5 @@
 import MusicCard from "../../components/MusicCard";
-import Music from "../../types/music";
+import Music from "../../domain/types/music";
 import { ArtistCard } from "./SearchArtists";
 
 interface ArtistData {

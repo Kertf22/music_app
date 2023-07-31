@@ -1,4 +1,4 @@
-import { useGlobalStore } from "../../store/global";
+import { useGlobalStore } from "../../domain/store/global";
 
 
 interface TagProps {

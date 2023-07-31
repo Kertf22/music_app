@@ -11,12 +11,10 @@ interface GlobalStore {
 }
 
 export const useGlobalStore = create<GlobalStore>((set) => ({
-
     page: HOME_PAGE,
     setPage: (page: Page) => set({ page, selectedTag: 'all' }),
     selectedTag: 'all',
     setSelectedTag: (selectedTag: SearchTag) => set({ selectedTag }),
-
 }));
 
 

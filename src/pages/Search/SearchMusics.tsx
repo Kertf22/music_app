@@ -1,5 +1,5 @@
 import { Timer } from "@phosphor-icons/react";
-import Music from "../../types/music";
+import Music from "../../domain/types/music";
 import MusicCard from "../../components/MusicCard";
 
 export const SearchMusics = () => {

@@ -1,5 +1,5 @@
 import { } from "react";
-import { useWindowDimentions } from "../../hooks/useWindowDimentions";
+import { useWindowDimentions } from "../../domain/hooks/useWindowDimentions";
 import MusicCard from "../../components/MusicCard";
 interface IMusicData {
   id: string;
